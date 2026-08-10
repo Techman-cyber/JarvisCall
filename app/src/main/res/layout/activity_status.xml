@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#14171F"
+    android:padding="28dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/greeting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#F6F2E9"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#8B8878"
+        android:textSize="15sp"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/editSetupBtn"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Change settings"
+        android:backgroundTint="#2A2E38"
+        android:textColor="#F6F2E9" />
+
+</LinearLayout>

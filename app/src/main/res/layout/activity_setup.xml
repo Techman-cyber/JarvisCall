@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#14171F">
+
+    <!-- Step dots -->
+    <LinearLayout
+        android:id="@+id/dotsRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="28dp"
+        android:paddingBottom="8dp">
+
+        <View android:id="@+id/dot0" android:layout_width="26dp" android:layout_height="4dp" android:background="#E4A94F" android:layout_marginEnd="6dp" />
+        <View android:id="@+id/dot1" android:layout_width="26dp" android:layout_height="4dp" android:background="#3A3D45" android:layout_marginEnd="6dp" />
+        <View android:id="@+id/dot2" android:layout_width="26dp" android:layout_height="4dp" android:background="#3A3D45" android:layout_marginEnd="6dp" />
+        <View android:id="@+id/dot3" android:layout_width="26dp" android:layout_height="4dp" android:background="#3A3D45" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp">
+
+        <!-- PAGE 0: name + number -->
+        <LinearLayout
+            android:id="@+id/page0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Who's this for?" android:textColor="#F6F2E9" android:textSize="24sp" android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="JarvisHere uses this to answer callers on your behalf." android:textColor="#8B8878" android:textSize="14sp"
+                android:layout_marginBottom="24dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Your name" android:textColor="#B8B4A5" android:textSize="13sp" android:layout_marginBottom="6dp" />
+            <EditText android:id="@+id/nameInput" android:layout_width="match_parent" android:layout_height="52dp"
+                android:hint="e.g. Alex" android:textColorHint="#5A5D66" android:textColor="#F6F2E9"
+                android:background="#1D2028" android:padding="14dp" android:inputType="textPersonName" android:layout_marginBottom="18dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Your phone number" android:textColor="#B8B4A5" android:textSize="13sp" android:layout_marginBottom="6dp" />
+            <EditText android:id="@+id/phoneInput" android:layout_width="match_parent" android:layout_height="52dp"
+                android:hint="e.g. 9876543210" android:textColorHint="#5A5D66" android:textColor="#F6F2E9"
+                android:background="#1D2028" android:padding="14dp" android:inputType="phone" />
+        </LinearLayout>
+
+        <!-- PAGE 1: voice -->
+        <LinearLayout
+            android:id="@+id/page1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Pick a voice" android:textColor="#F6F2E9" android:textSize="24sp" android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="This is what callers will hear." android:textColor="#8B8878" android:textSize="14sp"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout android:id="@+id/voiceFemaleCard" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:background="#1D2028"
+                android:padding="16dp" android:layout_marginBottom="12dp">
+                <RadioButton android:id="@+id/voiceFemale" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:clickable="false" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp"
+                    android:text="Female voice" android:textColor="#F6F2E9" android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/voiceMaleCard" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:background="#1D2028"
+                android:padding="16dp">
+                <RadioButton android:id="@+id/voiceMale" android:layout_width="wrap_content" android:layout_height="wrap_content" android:clickable="false" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp"
+                    android:text="Male voice" android:textColor="#F6F2E9" android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- PAGE 2: who to answer for -->
+        <LinearLayout
+            android:id="@+id/page2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Who should it pick up for?" android:textColor="#F6F2E9" android:textSize="24sp" android:textStyle="bold"
+                android:layout_marginBottom="24dp" />
+
+            <LinearLayout android:id="@+id/filterEveryoneCard" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:background="#1D2028"
+                android:padding="16dp" android:layout_marginBottom="10dp">
+                <RadioButton android:id="@+id/filterEveryone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:clickable="false" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp"
+                    android:text="Everyone" android:textColor="#F6F2E9" android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/filterStrangersCard" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:background="#1D2028"
+                android:padding="16dp" android:layout_marginBottom="10dp">
+                <RadioButton android:id="@+id/filterStrangersOnly" android:layout_width="wrap_content" android:layout_height="wrap_content" android:clickable="false" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp"
+                    android:text="Only unknown numbers" android:textColor="#F6F2E9" android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/filterContactsCard" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:background="#1D2028"
+                android:padding="16dp" android:layout_marginBottom="10dp">
+                <RadioButton android:id="@+id/filterContactsOnly" android:layout_width="wrap_content" android:layout_height="wrap_content" android:clickable="false" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp"
+                    android:text="Only known contacts" android:textColor="#F6F2E9" android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/filterOffCard" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:background="#1D2028"
+                android:padding="16dp">
+                <RadioButton android:id="@+id/filterOff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:clickable="false" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="10dp"
+                    android:text="Off, don't screen" android:textColor="#F6F2E9" android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- PAGE 3: live permission status -->
+        <LinearLayout
+            android:id="@+id/page3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Turn it on" android:textColor="#F6F2E9" android:textSize="24sp" android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Each item below updates live as you grant it." android:textColor="#8B8878" android:textSize="14sp"
+                android:layout_marginBottom="20dp" />
+
+            <LinearLayout android:id="@+id/rowPerms" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:background="#1D2028" android:padding="16dp" android:layout_marginBottom="10dp">
+                <TextView android:id="@+id/statusPerms" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="○" android:textColor="#8A5F26" android:textSize="18sp" android:layout_marginEnd="12dp" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Phone, contacts, mic access" android:textColor="#F6F2E9" android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/rowRole" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:background="#1D2028" android:padding="16dp" android:layout_marginBottom="24dp">
+                <TextView android:id="@+id/statusRole" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="○" android:textColor="#8A5F26" android:textSize="18sp" android:layout_marginEnd="12dp" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Set as call screener" android:textColor="#F6F2E9" android:textSize="15sp" />
+            </LinearLayout>
+
+            <Button android:id="@+id/grantPermsBtn" android:layout_width="match_parent" android:layout_height="52dp"
+                android:text="Grant permissions" android:backgroundTint="#2A2E38" android:textColor="#F6F2E9" android:layout_marginBottom="10dp" />
+            <Button android:id="@+id/grantRoleBtn" android:layout_width="match_parent" android:layout_height="52dp"
+                android:text="Set as call screener" android:backgroundTint="#2A2E38" android:textColor="#F6F2E9" android:layout_marginBottom="10dp" />
+            <Button android:id="@+id/openSettingsBtn" android:layout_width="match_parent" android:layout_height="52dp"
+                android:text="Open app settings" android:backgroundTint="#00000000" android:textColor="#8B8878" />
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="20dp"
+        android:text="Next"
+        android:backgroundTint="#E4A94F"
+        android:textColor="#14171F"
+        android:textStyle="bold" />
+
+</LinearLayout>
